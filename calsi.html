@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tuffpower Energy Pvt. Ltd. supplies reliable power solutions for various industries including automotive, telecom, and more.">
+    <title>Industries We Serve - Tuffpower Energy Pvt. Ltd.</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: #333;
+            padding: 15px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo {
+            margin-right: 10px;
+        }
+
+        .tagline {
+            color: white;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .nav-links a:hover {
+            background-color: #FF9800;
+        }
+
+        /* Industry Section */
+        .industries-section {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* Image Slider */
+        .industry-slider {
+            position: relative;
+            max-width: 900px;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+        }
+
+        .slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slides img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 10px;
+        }
+
+        /* Navigation Buttons */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0,0,0,0.5);
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .prev { left: 10px; }
+        .next { right: 10px; }
+
+        /* CTA Button */
+        .cta-button {
+            display: inline-block;
+            padding: 12px 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin-top: 10px;
+            background-color: #007bff;
+            color: white;
+        }
+
+        .cta-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            padding: 20px;
+            color: white;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: 0.3s ease-in-out;
+        }
+
+        .footer-links a:hover {
+            color: #FF9800;
+        }
+
+    </style>
+</head>
+<body>
+
+<header class="navbar">
+    <div class="container">
+        <div class="logo-section">
+            <img src="logo.jpg" alt="Tuffpower Logo" class="logo" width="150px" />
+            <p class="tagline"><strong>Power for Future</strong></p> 
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="industries.html">Industries We Serve</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="privacy_policy.html">Privacy Policy</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <section class="industries-section">
+        <h1>Industries We Serve</h1>
+        <p><b>We proudly supply reliable power solutions to various sectors.</b></p>
+
+        <!-- Image Slider -->
+        <div class="industry-slider">
+            <button class="prev" onclick="prevSlide()">❮</button>
+            <div class="slides">
+                <img src="ae.png" alt="Automotive Battery">
+                <img src="as.png" alt="Telecom Battery">
+                <img src="ad.png" alt="Home Backup Battery">
+                <img src="af.png" alt="Industrial Battery">
+            </div>
+            <button class="next" onclick="nextSlide()">❯</button>
+        </div>
+
+        <a href="products.html" class="cta-button">Explore Our Products</a>
+    </section>
+</main>
+
+<footer align="center">
+    <p>&copy; 2025 Faizan Pathan. All rights reserved.</p>
+    <div class="footer-links">
+        <a href="about.html">About</a> | <a href="contact.html">Contact</a> | <a href="#">Privacy Policy</a>
+    </div>
+</footer>
+
+<script>
+    let slideIndex = 0;
+    const slides = document.querySelector('.slides');
+    const totalSlides = slides.children.length;
+
+    function showSlide() {
+        slides.style.transform = `translateX(-${slideIndex * 420}px)`;
+    }
+
+    function nextSlide() {
+        slideIndex = (slideIndex + 1) % totalSlides;
+        showSlide();
+    }
+
+    function prevSlide() {
+        slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
+        showSlide();
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,485 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", Arial, sans-serif;
+    background: linear-gradient(to right, #1E3C72, #2A5298);
+    color: white;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Mobile-First Navbar Styling */
+.navbar {
+    background: #ffffff;
+    padding: 0.75rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    width: 95%;
+    max-width: 1400px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.logo-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo {
+    max-width: 120px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 0.25rem;
+}
+
+.tagline {
+    font-size: clamp(10px, 3vw, 12px);
+    color: #ff9800;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: none; /* Hidden by default on mobile */
+    flex-direction: column;
+    width: 100%;
+    background: #ffffff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 0.5rem 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links.active {
+    display: flex; /* Show when hamburger menu is clicked */
+}
+
+.nav-links li {
+    width: 100%;
+    text-align: center;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #333333;
+    font-weight: 500;
+    padding: 0.5rem;
+    display: block;
+    font-size: clamp(14px, 4vw, 16px);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    background-color: #ff9800;
+    color: #ffffff;
+}
+
+.hamburger {
+    display: block;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #333333;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Main Content */
+.full-page {
+    flexkaa: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: clamp(15px, 4vw, 30px) 0.5rem;
+}
+/*contact
+.contact-info {
+    text-align: center; /* Pure text ko center align karega */
+    margin: 0 auto; /* Div ko horizontally center karne ke liye */
+    max-width: 600px; /* Responsive width maintain karega */
+}
+
+
+/* Intro Sections */
+.intro, .about-intro, .products-intro, .contact, .industries-section, .explore-intro, .privacy-container {
+    text-align: center;
+    max-width: 100%;
+    width: 95%;
+    margin: auto;
+}
+
+.intro h1, .about-intro h1, .products-intro h1, .contact h1, .industries-section h1, .explore-intro h1, .privacy-container h1 {
+    font-size: clamp(1.5rem, 6vw, 2.2rem);
+    margin-bottom: 0.75rem;
+}
+
+.intro p, .about-intro p, .products-intro p, .contact p, .industries-section p, .explore-intro p, .privacy-container p {
+    font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Grid Layouts */
+.grid-container, .product-grid, .policy-grid, .industry-list, .features-container, .values-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column on mobile */
+    gap: 1rem;
+    max-width: 100%;
+    width: 95%;
+    margin: auto;
+    padding: 0.75rem;
+}
+
+/* Grid Items */
+.grid-item, .product-item, .policy-item, .industry-item, .value-box, .feature-box {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item:hover, .product-item:hover, .policy-item:hover, .industry-item:hover, .value-box:hover, .feature-box:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 10px #ff9800;
+}
+
+.grid-item h2, .product-item h3, .policy-item h2, .industry-item h3, .value-box h3, .feature-box h3 {
+    color: #ff9800;
+    margin-bottom: 0.5rem;
+    font-size: clamp(1.1rem, 4vw, 1.3rem);
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+}
+
+/* Industries Section Specific Styles */
+.industries-section {
+    background: #1E3C72;
+    padding: clamp(20px, 5vw, 40px) 0.75rem;
+    border-radius: 8px;
+    margin: 0.75rem auto;
+}
+
+.industries-section h1 {
+    color: #ff9800;
+}
+
+.industries-section p {
+    color: #FFFFFF;
+}
+
+.industry-list {
+    grid-template-columns: 1fr; /* Single column on mobile */
+}
+
+.industry-item {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 2px solid #ff9800;
+    color: #f0f0f0;
+}
+
+.industry-item h3 {
+    color: #ff9800;
+}
+
+.industry-item p {
+    color: #f0f0f0;
+}
+
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: clamp(8px, 2.5vw, 10px) clamp(15px, 4vw, 20px);
+    background: #ff9800;
+    color: black;
+    font-size: clamp(0.85rem, 3vw, 0.95rem);
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    touch-action: manipulation; /* Improves touch responsiveness */
+}
+
+.cta-button:hover {
+    background: white;
+    color: #ff9800;
+}
+
+.cta-button {
+    display: block; /* Button ko block bana dega */
+    width: fit-content; /* Button ka size content ke hisaab se set hoga */
+    margin: 20px auto; /* Auto margin se horizontally center ho jayega */
+    text-align: center; /* Text ko properly center karega */
+    padding: 10px 20px; /* Button ke andar spacing improve karega */
+}
+
+/* Contact Form */
+.contact-form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    max-width: 100%;
+    width: 95%;
+    margin: auto;
+    text-align: left;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    font-size: clamp(0.85rem, 3vw, 0.95rem);
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: clamp(0.85rem, 3vw, 0.95rem);
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    box-shadow: 0 0 5px #ff9800;
+}
+
+.contact-form button {
+    margin-top: 0.75rem;
+    width: 100%;
+}
+
+/* Contact Info */
+.contact-info {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.contact-info h3 {
+    color: #ff9800;
+    margin-bottom: 0.5rem;
+    font-size: clamp(1.1rem, 4vw, 1.3rem);
+}
+
+.contact-info p {
+    margin: 0.25rem 0;
+    font-size: clamp(0.85rem, 3vw, 0.95rem);
+}
+
+.contact-info a {
+    color: #ff9800;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+/* Why Choose Us */
+.why-choose-us {
+    padding: clamp(20px, 5vw, 40px) 0.75rem;
+    text-align: center;
+}
+
+.why-choose-us h2 {
+    font-size: clamp(1.3rem, 5vw, 1.8rem);
+    margin-bottom: 1rem;
+    color: #ff9800;
+}
+
+/* Footer */
+footer {
+    background-color: #F1F1F1; /* Soft light grey */
+    color: #333; /* Dark text for contrast */
+    padding: 15px;
+    text-align: center;
+}
+
+
+
+.footer-links a {
+    color: #ff9800;
+    text-decoration: none;
+    margin: 0 0.5rem;
+    font-size: clamp(0.85rem, 3vw, 0.95rem);
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #333; /* Dark grey ya koi elegant shade try karo */
+    color: white; /* Text contrast maintain karega */
+    padding: 15px;
+    text-align: center;
+}
+
+
+
+/* Animations */
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+}
+
+.slide-up {
+    transform: translateY(30px);
+    opacity: 0;
+    animation: slideUp 1s forwards;
+}
+
+.zoom-in {
+    transform: scale(0.9);
+    opacity: 0;
+    animation: zoomIn 1s forwards;
+}
+
+.glow-effect {
+    text-shadow: 0 0 8px #ff9800;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes zoomIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Hamburger Menu Toggle */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Tablet and Larger Screens */
+@media (min-width: 768px) {
+    .hamburger {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+    }
+
+    .nav-links li {
+        width: auto;
+    }
+
+    .nav-links li a {
+        padding: 0.5rem 0.75rem;
+    }
+
+    .logo {
+        max-width: 150px;
+    }
+
+    .container {
+        width: 90%;
+    }
+
+    .intro h1, .about-intro h1, .products-intro h1, .contact h1, .industries-section h1, .explore-intro h1, .privacy-container h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+    }
+
+    .grid-container, .product-grid, .policy-grid, .industry-list, .features-container, .values-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+        max-width: 600px;
+    }
+
+    .industries-section {
+        padding: clamp(30px, 5vw, 60px) 1rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .full-page {
+        padding: clamp(30px, 5vw, 50px) 1rem;
+    }
+
+    .grid-container, .product-grid, .policy-grid, .industry-list, .features-container, .values-container {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1600px;
+    }
+
+    .intro h1, .about-intro h1, .products-intro h1, .contact h1, .industries-section h1, .explore-intro h1, .privacy-container h1 {
+        font-size: 3.5rem;
+    }
+
+    .grid-container, .product-grid, .policy-grid, .industry-list, .features-container, .values-container {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+
+    .cta-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1.2rem;
+    }
+}
+
+
