@@ -3,92 +3,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tuffpower Energy Pvt. Ltd. - Leading manufacturer of high-performance lead-acid batteries.">
     <title>Tuffpower Energy Pvt. Ltd.</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
 </head>
 <body>
-    <header class="navbar">
+    <nav class="navbar">
         <div class="container">
             <div class="logo-section">
-                <img src="logo.jpg" alt="Tuffpower Logo" class="logo" />
-                <p class="tagline"><strong>Power for Future</strong></p>
+                <a href="index.html">
+                    <img src="logo.jpg" alt="Tuffpower Logo" class="logo">
+                </a>
+                <span class="tagline">Power for Future</span>
             </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="industries.html">Industries We Serve</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="Privacy_Policy.html">Privacy Policy</a></li>
+                <li><a href="contact.html">Become a Dealer</a></li>
+            </ul>
             <div class="hamburger">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="industries.html">Industries We Serve</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="privacy_policy.html">Privacy Policy</a></li>
-                </ul>
-            </nav>
         </div>
-    </header>
-     <br>
-     <br>
+    </nav>
 
-    <main class="content-container">
+    <section class="full-page">
+        <div class="content-container">
+            <h1 class="fade-in">Welcome to Tuffpower Energy Private Limited</h1>
+            <h2 class="slide-up">Powering Industry, Empowering Progress</h2>
+            <p class="fade-in">
+                At Tuffpower Energy Private Limited, we are redefining the standards of power storage solutions for India’s fast-evolving industrial and commercial landscape. As one of the most trusted names in battery manufacturing, we specialize in providing high-performance, durable, and eco-friendly batteries tailored to meet the demanding needs of modern industries, businesses, and households.
+            </p>
+            <p class="fade-in">
+                From automotive to industrial, inverter to solar, and e-mobility solutions — we offer a comprehensive portfolio designed to energize operations, optimize performance, and ensure uninterrupted power when it matters most.
+            </p>
+            <div style="text-align: center;">
+    <a href="products.html" class="cta-button fade-in">Explore Our Products</a>
+</div>
+<br>
 
-        <section class="intro">
-            <h1 align ="center">Welcome to Tuffpower Energy Private Limited</h1>
-            <p>Reliable and high-performance lead-acid batteries for automotive, energy backup, and telecom applications.</p>
-            <br>
-            <p align="center"><strong class="highlight">Powering today. Shaping tomorrow.</strong></p>
-            <br>
 
-            <a href="products.html" class="cta-button">Explore Our Products</a>
-        </section>
-
-        <section class="why-choose-us">
-            <h2>Why Choose Us?</h2>
-            <div class="features-container">
-                <div class="feature-box">
-                    <h3>🔋 Unmatched Quality & Performance</h3>
-                    <p>Designed for maximum durability, delivering long-lasting power with high efficiency.</p>
+            <h2 class="slide-up">Why Choose Us?</h2>
+            <div class="why-choose-grid">
+                <div class="why-choose-item fade-in">
+                    <span class="icon">🔋</span>
+                    <h3>Unmatched Quality</h3>
+                    <p>Designed for maximum durability and high efficiency.</p>
                 </div>
-                <div class="feature-box">
-                    <h3>🌍 Sustainable & Eco-Friendly</h3>
-                    <p>We prioritize green innovation, ensuring energy-efficient and environmentally friendly solutions.</p>
+                <div class="why-choose-item fade-in">
+                    <span class="icon">🌍</span>
+                    <h3>Sustainable Solutions</h3>
+                    <p>Eco-friendly and energy-efficient batteries.</p>
                 </div>
-                <div class="feature-box">
-                    <h3>🚀 Cutting-Edge Technology</h3>
-                    <p>Advanced battery technology that powers industries with top-tier reliability.</p>
+                <div class="why-choose-item fade-in">
+                    <span class="icon">🚀</span>
+                    <h3>Cutting-Edge Tech</h3>
+                    <p>Advanced technology for reliable performance.</p>
                 </div>
-                <div class="feature-box">
-                    <h3>🤝 Customer-Centric Approach</h3>
-                    <p>Dedicated support and customized solutions to meet all energy needs.</p>
+                <div class="why-choose-item fade-in">
+                    <span class="icon">🤝</span>
+                    <h3>Customer-Centric</h3>
+                    <p>Dedicated support and customized solutions.</p>
                 </div>
-                <div class="feature-box">
-                    <h3>🏆 Proven Industry Leadership</h3>
-                    <p>Trusted by businesses worldwide, setting new benchmarks in battery efficiency.</p>
+                <div class="why-choose-item fade-in">
+                    <span class="icon">🏆</span>
+                    <h3>Industry Leadership</h3>
+                    <p>Trusted by businesses worldwide.</p>
+                </div>
+                <div class="why-choose-item fade-in">
+                    <span class="icon">⚡</span>
+                    <h3>Fast Delivery</h3>
+                    <p>Efficient supply chain for seamless operations.</p>
                 </div>
             </div>
-        </section>
-    </main>
+            <br>
 
-    <footer align="center">
-        <p>© 2025 Faizan Pathan. All rights reserved.</p>
-        <div class="footer-links">
-            <a href="about.html">About</a> | <a href="contact.html">Contact</a> | <a href="privacy_policy.html">Privacy Policy</a>
-        </div>
-    </footer>
+            <h2 class="slide-up">Our Commitment to Quality & Sustainability</h2>
+            <div class="commitment-grid fade-in">
+                <div class="commitment-item">
+                    <span class="icon">♻️</span>
+                    <p>Eco-Friendly Production</p>
+                </div>
+                <div class="commitment-item">
+                    <span class="icon">🚯</span>
+                    <p>Strict Pollution Control</p>
+                </div>
+                <div class="commitment-item">
+                    <span class="icon">🔄</span>
+                    <p>Battery Recycling</p>
+                </div>
+                <div class="commitment-item">
+                    <span class="icon">🌱</span>
+                    <p>Clean Energy Support</p>
+                </div>
+            </div>
 
-    <script>
-        // Hamburger menu toggle
-        document.querySelector('.hamburger').addEventListener('click', function() {
-            this.classList.toggle('active');
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-    </script>
-    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93adfad3e978adc9',t:'MTc0NjQyNDQzMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document
+            <br>
 
-System: .body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+            <h2 class="slide-up">Looking for Reliable Battery Solutions?</h2>
+            <p class="fade-in"; align="center">  Contact us today to explore our products or inquire about dealership opportunities!
+            </p>
+        
+               <div style="text-align: center;">
+               <a href="Contact.html" class="cta-button fade-in">Get in Touch</a>
+                </div>
+
+    </section>
+
+
+<footer style="background-color: #222; color: #fff; padding: 15px; text-align: center; font-size: 14px;">
+    <a href="about.html" style="color: #fff; text-decoration: none; margin: 0 10px;">About</a> |
+    <a href="contact.html" style="color: #fff; text-decoration: none; margin: 0 10px;">Contact</a> |
+    <a href="Privacy_Policy.html" style="color: #fff; text-decoration: none; margin: 0 10px;">Privacy Policy</a> 
+   
+    <a href="https://www.instagram.com/tuffpowerenergy?igsh=MWZhNW54MHYwem84bA==" target="_blank" style="color: #fff; margin: 0 10px;"><i class="fab fa-instagram"></i></a>
+    <a href="https://www.facebook.com/profile.php?id=61573538819310" target="_blank" style="color: #fff; margin: 0 10px;"><i class="fab fa-facebook"></i></a> |
+    © 2025 Tuffpower Energy Pvt. Ltd. All rights reserved.
+</footer>
+
+
+    <div class="scroll-to-top">
+        <span>↑</span>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
