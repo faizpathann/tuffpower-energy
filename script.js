@@ -59,11 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
         );
     });
 
-    // Contact Form Validation
+    // Contact Form Validation and Submission
     const contactForm = document.querySelector('#contactForm');
     if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault(); // Prevent default to validate first
             const name = document.querySelector('#name').value.trim();
             const email = document.querySelector('#email').value.trim();
             const message = document.querySelector('#message').value.trim();
@@ -78,8 +78,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            alert('Message sent successfully!');
-            contactForm.reset();
+            try {
+                // Submit form to Formspree via Fetch
+                const response = await fetch('https://formspree.io/f/meoggodw', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ name, email, message })
+                });
+
+                if (response.ok) {
+                    alert('Message sent successfully!');
+                    contactForm.reset();
+                } else {
+                    alert('Failed to send message. Please try again later.');
+                }
+            } catch (error) {
+                alert('An error occurred. Please try again later.');
+                console.error('Form submission error:', error);
+            }
         });
     }
 });
