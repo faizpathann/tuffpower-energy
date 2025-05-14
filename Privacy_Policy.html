@@ -16,9 +16,7 @@
     <nav class="navbar">
         <div class="container">
             <div class="logo-section">
-                <a href="index.html">
-                    <img src="logo.jpg" alt="Tuffpower Logo" class="logo">
-                </a>
+                <img src="logo.jpg" alt="Tuffpower Logo" class="logo" onclick="window.location.href='index.html';">
                 <span class="tagline">Power for Future</span>
             </div>
             <ul class="nav-links">
@@ -39,44 +37,54 @@
     </nav>
 
     <main class="full-page">
-        <section class="privacy-container">
-            <h1 align="center" class="fade-in">🔒 Privacy Policy</h1>
-            <p class="slide-up"align="center">At Tuffpower Energy Pvt. Ltd., we value and respect your privacy. This policy explains how we collect, use, and safeguard your personal information.</p>
+        <div class="content-container">
+            <h1 class="fade-in">🔒 Your Privacy Matters</h1>
+            <p class="fade-in">
+                At Tuffpower Energy Pvt. Ltd., we are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data with transparency and care.
+            </p>
 
-            <div class="policy-grid">
-                <div class="policy-item hover-effect">
-                    <h2>📄 1. Information We Collect</h2>
-                    <p align="center">We collect essential details like name, email, and phone number to enhance our services.</p>
+            <div class="privacy-grid">
+                <div class="privacy-item fade-in">
+                    <span class="icon">📄</span>
+                    <h3>Information We Collect</h3>
+                    <p>We gather essential details like your name, email, and phone number to enhance our services and provide personalized experiences.</p>
                 </div>
-                <div class="policy-item hover-effect">
-                    <h2>📊 2. How We Use Your Data</h2>
-                    <p align="center">Your data helps us improve customer experience, provide updates, and ensure better services.</p>
+                <div class="privacy-item fade-in">
+                    <span class="icon">📊</span>
+                    <h3>How We Use Your Data</h3>
+                    <p>Your information helps us improve customer experiences, send relevant updates, and deliver tailored services.</p>
                 </div>
-                <div class="policy-item hover-effect">
-                    <h2>🔐 3. Data Security</h2>
-                    <p align="center">Our robust security measures protect your personal information from unauthorized access.</p>
+                <div class="privacy-item fade-in">
+                    <span class="icon">🔐</span>
+                    <h3>Data Security</h3>
+                    <p>We employ robust security measures to protect your data from unauthorized access, ensuring your peace of mind.</p>
                 </div>
-                <div class="policy-item hover-effect">
-                    <h2>🌐 4. Third-Party Services</h2>
-                    <p align="center">We may use third-party integrations but ensure complete data protection.</p>
+                <div class="privacy-item fade-in">
+                    <span class="icon">🌐</span>
+                    <h3>Third-Party Services</h3>
+                    <p>We may use trusted third-party services, ensuring your data remains protected through strict compliance.</p>
                 </div>
-                <div class="policy-item hover-effect">
-                    <h2>⚖️ 5. Your Rights</h2>
-                    <p align="center">You have the right to access, update, or delete your personal data. If you wish to opt out or request modifications, contact us using the information below.</p>
+                <div class="privacy-item fade-in">
+                    <span class="icon">⚖️</span>
+                    <h3>Your Rights</h3>
+                    <p>You can access, update, or delete your personal data. Contact us to exercise your rights or opt out.</p>
                 </div>
-                <div class="policy-item hover-effect">
-                    <h2>🍪 6. Cookies & Tracking Technologies</h2>
-                    <p align="center">Our website uses cookies to analyze visitor behavior, improve site performance, and personalize user experiences. You can manage cookie preferences via browser settings.</p>
-                </div>
-                <div class="policy-item hover-effect">
-                    <h2>📩 7. Contact Us</h2>
-                    <p align="center">Have queries? Reach out via our <a href="contact.html">Contact Page</a>.</p>
+                <div class="privacy-item fade-in">
+                    <span class="icon">🍪</span>
+                    <h3>Cookies & Tracking</h3>
+                    <p>We use cookies to enhance site performance and personalize experiences. Manage preferences in your browser settings.</p>
                 </div>
             </div>
-        </section>
+
+            <div class="contact-section slide-up">
+                <h2>📩 Questions About Your Privacy?</h2>
+                <p>We're here to help! Reach out with any concerns or inquiries.</p>
+                <a href="contact.html" class="contact-button">Get in Touch</a>
+            </div>
+        </div>
     </main>
 
-<footer style="background-color: #222; color: #fff; padding: 15px; text-align: center; font-size: 14px;">
+  <footer style="background-color: #222; color: #fff; padding: 15px; text-align: center; font-size: 14px;">
     <a href="about.html" style="color: #fff; text-decoration: none; margin: 0 10px;">About</a> |
     <a href="contact.html" style="color: #fff; text-decoration: none; margin: 0 10px;">Contact</a> |
     <a href="Privacy_Policy.html" style="color: #fff; text-decoration: none; margin: 0 10px;">Privacy Policy</a> 
@@ -85,30 +93,8 @@
     <a href="https://www.facebook.com/profile.php?id=61573538819310" target="_blank" style="color: #fff; margin: 0 10px;"><i class="fab fa-facebook"></i></a> |
     © 2025 Tuffpower Energy Pvt. Ltd. All rights reserved.
 </footer>
+    <div class="scroll-to-top">↑</div>
 
-
-<script>
-    // Hamburger menu toggle
-    document.querySelector('.hamburger').addEventListener('click', function() {
-        this.classList.toggle('active');
-        document.querySelector('.nav-links').classList.toggle('active');
-    });
-
-    // Scroll-to-Top Button
-    const scrollToTopBtn = document.querySelector('.scroll-to-top');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            scrollToTopBtn.classList.add('show');
-        } else {
-            scrollToTopBtn.classList.remove('show');
-        }
-    });
-
-    scrollToTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-</script>
-    <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93adfad24e5f7b93',t:'MTc0NjQyNDQzMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
-     <div class="scroll-to-top">↑</div>
+    <script src="script.js"></script>
 </body>
 </html>
