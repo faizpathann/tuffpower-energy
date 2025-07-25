@@ -1,98 +1,341 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tuffpower Energy Pvt. Ltd.</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="script.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Tuffpower Energy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f9fc;
+      color: #333;
+      line-height: 1.6;
+    }
 
+    /* ✅ Navbar */
+    header {
+      background: #ffffff;
+      padding: 1.2em 2em;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .company-name {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #0077b6;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.2em;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #0077b6;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.5em;
+      color: #0077b6;
+      cursor: pointer;
+    }
+
+    /* ✅ Contact Section */
+    .container {
+      padding: 60px 20px;
+      background-color: #ffffff;
+    }
+
+    .container h1 {
+      text-align: center;
+      font-size: 2.4em;
+      font-weight: 700;
+      color: #023e8a;
+      margin-bottom: 10px;
+    }
+
+    .container h2 {
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: 500;
+      color: #0096c7;
+      margin-bottom: 40px;
+    }
+
+    .contact-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-bottom: 60px;
+    }
+
+    .faq-list {
+      border-right: 1px solid #e0e0e0;
+      padding-right: 20px;
+    }
+
+    .faq-list h4 {
+      font-size: 1em;
+      font-weight: 600;
+      color: #023e8a;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 10px;
+    }
+
+    .contact-form label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #023e8a;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+      font-family: inherit;
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+    }
+
+    .btn {
+      background-color: #0077b6;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 6px;
+      font-weight: 500;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #0096c7;
+    }
+
+    .contact-details {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 1em;
+      color: #495057;
+    }
+
+    .contact-details p {
+      margin: 15px 0;
+    }
+
+    /* ✅ Footer */
+    .footer {
+      background: #f3f6fa;
+      padding: 1em 2em;
+      font-size: 0.95em;
+      color: #333;
+      text-align: center;
+    }
+
+    .footer-full {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2em;
+    }
+
+    .footer-links a {
+      color: #005f73;
+      text-decoration: none;
+      font-weight: 500;
+      margin: 0 6px;
+    }
+
+    .footer-links a:hover {
+      color: #0077b6;
+    }
+
+    .social-icons {
+      font-weight: 500;
+      color: #555;
+    }
+
+    .social-icons a {
+      color: #0077b6;
+      font-size: 1.2em;
+      margin-left: 8px;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .social-icons a:hover {
+      color: #005f73;
+    }
+
+    .footer-right {
+      font-weight: 500;
+      color: #555;
+    }
+
+    /* ✅ Responsive */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 0.8em;
+        background: #ffffff;
+        padding: 1em;
+        border-radius: 6px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      }
+
+      #main-nav {
+        display: none;
+        width: 100%;
+      }
+
+      #main-nav.active {
+        display: block;
+        margin-top: 1em;
+      }
+
+      .container h1 { font-size: 2em; }
+      .container h2 { font-size: 1.3em; }
+      .contact-section {
+        grid-template-columns: 1fr;
+        padding: 0;
+      }
+      .faq-list {
+        border-right: none;
+        padding-right: 0;
+      }
+      .footer-full {
+        flex-direction: column;
+        gap: 0.6em;
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo-section">
-               <img src="logo.jpg" alt="Tuffpower Logo" class="logo" onclick="window.location.href='index.html';">
 
-                <span class="tagline">Power for Future</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="industries.html">Industries We Serve</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="Privacy_Policy.html">Privacy Policy</a></li>
-                <li><a href="contact.html">Become a Dealer</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+  <!-- ✅ Navbar -->
+  <header>
+    <div class="navbar">
+      <span class="company-name">Tuffpower Energy</span>
+      <div class="hamburger" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="product.html">Products</a></li>
+          <li><a href="industry.html">Industries We Serve</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <main class="full-page">
-        <div class="content-container">
-            <h1 class="fade-in">Contact Us</h1>
-            <p class="fade-in" align="center">We’re here to assist you! Reach out with any questions, feedback, or inquiries.</p>
+  <!-- 📩 Contact Section -->
+  <main class="container">
+    <h1>Contact Us</h1>
+    <h2>How Can We Help?</h2>
 
-            <div class="contact-section">
-                <div class="contact-wrapper">
-                    <div class="contact-questions fade-in">
-                        <h2>How Can We Help?</h2>
-                        <ul class="help-list">
-                            <li>What types of batteries do you manufacture?</li>
-                            <li>Can you provide Lithium-Ion battery specs?</li>
-                            <li>Do you offer custom battery solutions?</li>
-                            <li>What are pricing options for bulk orders?</li>
-                            <li>How can I place an order?</li>
-                            <li>What’s the lead time for large orders?</li>
-                            <li>Do you provide technical support?</li>
-                            <li>What’s the warranty policy?</li>
-                        </ul>
-                    </div>
-                    <div class="contact-form fade-in">
-                        <form action="https://formspree.io/f/meoggodw" method="POST" id="contactForm" class="contact-form">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" required>
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" name="email" required>
-                            <label for="message">Your Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                            <button type="submit" class="contact-button">Send Message</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <br>
+    <section class="contact-section">
+      <!-- 🔍 FAQ Block -->
+      <div class="faq-list">
+        <h4>1. What types of batteries do you manufacture?</h4>
+        <h4>2. Can you provide Lithium-Ion battery specs?</h4>
+        <h4>3. Do you offer custom battery solutions?</h4>
+        <h4>4. What are pricing options for bulk orders?</h4>
+        <h4>5. How can I place an order?</h4>
+        <h4>6. What’s the lead time for large orders?</h4>
+        <h4>7. Do you provide technical support?</h4>
+        <h4>8. What’s the warranty policy?</h4>
+        <h4>9. Do you ship across India?</h4>
+        <h4>10. Where can I get a dealer quote?</h4>
+      </div>
 
-            <div class="contact-info slide-up">
-                <h3>Contact Details</h3>
-                <p><span class="icon">📞</span> +91 9926079786</p>
-                <p><span class="icon">📧</span> <a href="mailto:tuffpowerenergy@gmail.com">tuffpowerenergy@gmail.com</a></p>
-                <p><span class="icon">📍</span> Plot Number -240 B, Pithampur Industrial Area, Sector 3, Pithampur, Indore, Madhya Pradesh 454001</p>
-            </div>
-        </div>
-    </main>
+      <!-- 📝 Form Block -->
+      <form class="contact-form">
+        <form action="https://formspree.io/f/meoggodw" method="POST" id="contactForm" class="contact-form">
+        <label for="name">Your Name *</label>
+        <input type="text" id="name" name="name" required />
 
-     <footer style="background-color: #222; color: #fff; padding: 15px; text-align: center; font-size: 14px;">
-    <a href="about.html" style="color: #fff; text-decoration: none; margin: 0 10px;">About</a> |
-    <a href="contact.html" style="color: #fff; text-decoration: none; margin: 0 10px;">Contact</a> |
-    <a href="Privacy_Policy.html" style="color: #fff; text-decoration: none; margin: 0 10px;">Privacy Policy</a> 
-   
-    <a href="https://www.instagram.com/tuffpowerenergy?igsh=MWZhNW54MHYwem84bA==" target="_blank" style="color: #fff; margin: 0 10px;"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/profile.php?id=61573538819310" target="_blank" style="color: #fff; margin: 0 10px;"><i class="fab fa-facebook"></i></a> |
-    © 2025 Tuffpower Energy Pvt. Ltd. All rights reserved.
-</footer>
+        <label for="phone">Your Number *</label>
+        <input type="tel" id="phone" name="phone" required />
 
-    <div class="scroll-to-top">↑</div>
+        <label for="email">Your Email *</label>
+        <input type="email" id="email" name="email" required />
 
-    <script src="script.js"></script>
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" rows="5"></textarea>
+
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </section>
+
+    <!-- 📞 Contact Info -->
+    <section class="contact-details">
+      <p>📞 <strong>+91 9926079786</strong></p>
+      <p>📧 <strong>tuffpowerenergy@gmail.com</strong></p>
+      <p>📍 Plot Number -240 B, Pithampur Industrial Area, Sector 3, Pithampur, Indore, Madhya Pradesh 454001</p>
+    </section>
+  </main>
+
+  <!-- ✅ Footer -->
+  <footer class="footer">
+    <div class="footer-full">
+      <span class="footer-links">
+        <a href="index.html">Home</a> |
+        <a href="aboutus.html">About Us</a> |
+        <a href="product.html">Products</a> |
+        <a href="industry.html">Industries We Serve</a> |
+        <a href="contact.html">Contact</a> |
+        <a href="privacy.html">Privacy Policy</a>
+      </span>
+      <span class="social-icons">
+        Follow Us:
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+      </span>
+      <span class="footer-right">
+        &copy; 2025 Tuffpower Energy Pvt. Ltd.
+      </span>
+    </div>
+  </footer>
+
+  <!-- ✅ Hamburger Script -->
+  <script>
+    function toggleMenu() {
+      document.getElementById('main-nav').classList.toggle('active');
+    }
+  </script>
+
 </body>
 </html>
