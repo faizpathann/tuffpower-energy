@@ -1,109 +1,314 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tuffpower Energy Pvt. Ltd.</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="script.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Industries We Serve | Tuffpower Energy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f9fc;
+      color: #333;
+      line-height: 1.6;
+    }
 
+    /* ✅ Navbar */
+    header {
+      background: #ffffff;
+      padding: 1.2em 2em;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .company-name {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #0077b6;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.2em;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #0077b6;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.5em;
+      color: #0077b6;
+      cursor: pointer;
+    }
+
+    /* ✅ Main Section */
+    .container {
+      padding: 60px 20px;
+      background-color: #ffffff;
+    }
+
+    .container h1 {
+      text-align: center;
+      font-size: 2.4em;
+      font-weight: 700;
+      color: #023e8a;
+      margin-bottom: 10px;
+    }
+
+    .container h2 {
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: 500;
+      color: #0096c7;
+      margin-bottom: 40px;
+    }
+
+    .industry-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+
+    .industry-card {
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      background-color: #f8fbff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      padding: 30px 20px;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .industry-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+    }
+
+    .industry-card h3 {
+      font-size: 1.3em;
+      font-weight: 600;
+      color: #023e8a;
+      margin-bottom: 10px;
+    }
+
+    .industry-card p {
+      font-size: 1em;
+      color: #495057;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 60px auto 0;
+      background-color: #0077b6;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+      text-align: center;
+    }
+
+    .btn:hover {
+      background-color: #0096c7;
+    }
+
+    /* ✅ Footer */
+    .footer {
+      background: #f3f6fa;
+      padding: 1em 2em;
+      font-size: 0.95em;
+      color: #333;
+      text-align: center;
+    }
+
+    .footer-full {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2em;
+    }
+
+    .footer-links a {
+      color: #005f73;
+      text-decoration: none;
+      font-weight: 500;
+      margin: 0 6px;
+    }
+
+    .footer-links a:hover {
+      color: #0077b6;
+    }
+
+    .social-icons {
+      font-weight: 500;
+      color: #555;
+    }
+
+    .social-icons a {
+      color: #0077b6;
+      font-size: 1.2em;
+      margin-left: 8px;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .social-icons a:hover {
+      color: #005f73;
+    }
+
+    .footer-right {
+      font-weight: 500;
+      color: #555;
+    }
+
+    /* ✅ Responsive Design */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 0.8em;
+        background: #ffffff;
+        padding: 1em;
+        border-radius: 6px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      }
+
+      #main-nav {
+        display: none;
+        width: 100%;
+      }
+
+      #main-nav.active {
+        display: block;
+        margin-top: 1em;
+      }
+
+      .container h1 { font-size: 2em; }
+      .container h2 { font-size: 1.3em; }
+      .industry-grid { gap: 20px; }
+      .footer-full {
+        flex-direction: column;
+        gap: 0.6em;
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo-section">
-                <img src="logo.jpg" alt="Tuffpower Logo" class="logo" onclick="window.location.href='index.html';">
 
-                <span class="tagline">Power for Future</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="industries.html">Industries We Serve</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="Privacy_Policy.html">Privacy Policy</a></li>
-                <li><a href="contact.html">Become a Dealer</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
+  <!-- ✅ Navbar -->
+  <header>
+    <div class="navbar">
+      <span class="company-name">Tuffpower Energy</span>
+      <div class="hamburger" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="product.html">Products</a></li>
+          <li><a href="industry.html">Industries We Serve</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <main class="full-page">
-        <div class="content-container">
-            <h1 class="fade-in">Industries We Serve</h1>
-            <p class="fade-in" align="center">We provide reliable power solutions tailored to various sectors.</p>
+  <!-- 🔧 Industries We Serve Section -->
+  <main class="container">
+    <h1>Industries We Serve</h1>
+    <h2>Reliable power solutions for mission-critical sectors across India</h2>
 
-            <div class="industry-grid">
-                <div class="industry-item fade-in">
-                    <span class="icon">🚗</span>
-                    <h3>Automotive Sector</h3>
-                    <p>High-performance batteries for vehicles.</p>
-                </div>
-                <div class="industry-item fade-in">
-                    <span class="icon">📡</span>
-                    <h3>Telecom Industry</h3>
-                    <p>Reliable power for communication networks.</p>
-                </div>
-                <div class="industry-item fade-in">
-                    <span class="icon">🏠</span>
-                    <h3>Residential & Commercial</h3>
-                    <p>Efficient energy storage for homes and businesses.</p>
-                </div>
-                <div class="industry-item fade-in">
-                    <span class="icon">🏭</span>
-                    <h3>Industrial Power</h3>
-                    <p>High-capacity batteries for 24/7 reliability.</p>
-                </div>
-                <div class="industry-item fade-in">
-                    <span class="icon">🔋</span>
-                    <h3>Inverter & UPS</h3>
-                    <p>Backup solutions for offices and hospitals.</p>
-                </div>
-                <div class="industry-item fade-in">
-                    <span class="icon">🛺</span>
-                    <h3>Electric Vehicles</h3>
-                    <p>Batteries for e-rickshaws and light EVs.</p>
-                </div>
-                <div class="industry-item fade-in">
-                    <span class="icon">⚡</span>
-                    <h3>Renewable Energy</h3>
-                    <p>Storage for solar and wind power.</p>
-                </div>
-                <div class="industry-item fade-in">
-                    <span class="icon">🚢</span>
-                    <h3>Marine & Defense</h3>
-                    <p>Rugged batteries for demanding environments.</p>
-                </div>
-            </div>
+    <section class="industry-grid">
+      <div class="industry-card">
+        <h3>Automotive Sector</h3>
+        <p>Robust battery systems for two-wheelers, cars, and heavy vehicles.</p>
+      </div>
+      <div class="industry-card">
+        <h3>Inverter & UPS</h3>
+        <p>Long cycle life with stable output for backup power systems.</p>
+      </div>
+      <div class="industry-card">
+        <h3>Electric Vehicles</h3>
+        <p>High energy density and fast-charging cells for EV mobility.</p>
+      </div>
+      <div class="industry-card">
+        <h3>Renewable Energy</h3>
+        <p>Efficient storage for solar and wind-powered installations.</p>
+      </div>
+      <div class="industry-card">
+        <h3>Marine & Defense</h3>
+        <p>Reliable performance under extreme environments and long missions.</p>
+      </div>
+      <div class="industry-card">
+        <h3>Industrial Power</h3>
+        <p>Heavy-duty batteries for factories, machinery, and large-scale operations.</p>
+      </div>
+      <div class="industry-card">
+        <h3>Residential & Commercial</h3>
+        <p>Smart energy systems for homes, offices, and retail spaces.</p>
+      </div>
+      <div class="industry-card">
+        <h3>Telecom Industry</h3>
+        <p>Uninterrupted energy for towers, data centers, and communication hubs.</p>
+      </div>
+      
+    </section>
 
-            <br>
-            <div align="center">
-            <a href="products.html" class="cta-button slide-up">Explore Our Products</a>
-        </div>
-        </div>
-    </main>
+    <!-- 🔋 CTA Button -->
+    <div style="text-align: center;">
+      <a href="product.html" class="btn">Explore Our Products</a>
+    </div>
+  </main>
 
-   <footer style="background-color: #222; color: #fff; padding: 15px; text-align: center; font-size: 14px;">
-    <a href="about.html" style="color: #fff; text-decoration: none; margin: 0 10px;">About</a> |
-    <a href="contact.html" style="color: #fff; text-decoration: none; margin: 0 10px;">Contact</a> |
-    <a href="Privacy_Policy.html" style="color: #fff; text-decoration: none; margin: 0 10px;">Privacy Policy</a> 
-   
-    <a href="https://www.instagram.com/tuffpowerenergy?igsh=MWZhNW54MHYwem84bA==" target="_blank" style="color: #fff; margin: 0 10px;"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/profile.php?id=61573538819310" target="_blank" style="color: #fff; margin: 0 10px;"><i class="fab fa-facebook"></i></a> |
-    © 2025 Tuffpower Energy Pvt. Ltd. All rights reserved.
-</footer>
+  <!-- ✅ Footer -->
+  <footer class="footer">
+    <div class="footer-full">
+      <span class="footer-links">
+        <a href="index.html">Home</a> |
+        <a href="aboutus.html">About Us</a> |
+        <a href="product.html">Products</a> |
+        <a href="industry.html">Industries We Serve</a> |
+        <a href="contact.html">Contact</a> |
+        <a href="privacy.html">Privacy Policy</a>
+      </span>
+      <span class="social-icons">
+        Follow Us:
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+      </span>
+      <span class="footer-right">
+        &copy; 2025 Tuffpower Energy Pvt. Ltd.
+      </span>
+    </div>
+  </footer>
 
-    <div class="scroll-to-top">↑</div>
+  <!-- ✅ Hamburger Script -->
+  <script>
+    function toggleMenu() {
+      document.getElementById('main-nav').classList.toggle('active');
+    }
+  </script>
 
-    <script src="script.js"></script>
 </body>
 </html>
