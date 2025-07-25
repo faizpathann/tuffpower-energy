@@ -1,100 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tuffpower Energy Pvt. Ltd.</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="script.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Battery Products | Tuffpower Energy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f9fc;
+      color: #333;
+      line-height: 1.6;
+    }
 
+    /* ✅ Navbar */
+    header {
+      background: #ffffff;
+      padding: 1.2em 2em;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .company-name {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #0077b6;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.2em;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #0077b6;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .hamburger {
+      display: none;
+      font-size: 1.5em;
+      color: #0077b6;
+      cursor: pointer;
+    }
+
+    /* ✅ Product Section */
+    .container {
+      padding: 60px 20px;
+      background-color: #ffffff;
+    }
+    .container h1 {
+      text-align: center;
+      font-size: 2.4em;
+      font-weight: 700;
+      color: #023e8a;
+      margin-bottom: 10px;
+    }
+    .container h2 {
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: 500;
+      color: #0096c7;
+      margin-bottom: 40px;
+    }
+
+    .product-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 370px;
+      width: 100%;
+      max-width: 320px;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      background-color: #f8fbff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+    }
+    .product-card .emoji {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+    .product-card h3 {
+      font-size: 1.3em;
+      font-weight: 600;
+      color: #023e8a;
+      margin-bottom: 10px;
+    }
+    .product-card p {
+      font-size: 1em;
+      color: #495057;
+      padding: 0 10px;
+      margin-bottom: auto;
+    }
+    .btn {
+      margin-top: 20px;
+      background-color: #0077b6;
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #0096c7;
+    }
+
+    /* ✅ Footer */
+    .footer {
+      background: #f3f6fa;
+      padding: 1em 2em;
+      font-size: 0.95em;
+      color: #333;
+      text-align: center;
+    }
+    .footer-full {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2em;
+    }
+    .footer-links a {
+      color: #005f73;
+      text-decoration: none;
+      font-weight: 500;
+      margin: 0 6px;
+    }
+    .footer-links a:hover {
+      color: #0077b6;
+    }
+    .social-icons {
+      font-weight: 500;
+      color: #555;
+    }
+    .social-icons a {
+      color: #0077b6;
+      font-size: 1.2em;
+      margin-left: 8px;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .social-icons a:hover {
+      color: #005f73;
+    }
+    .footer-right {
+      font-weight: 500;
+      color: #555;
+    }
+
+    /* ✅ Mobile Responsive */
+    @media (max-width: 768px) {
+      .hamburger { display: block; }
+      nav ul {
+        flex-direction: column;
+        gap: 0.8em;
+        background: #ffffff;
+        padding: 1em;
+        border-radius: 6px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      }
+      #main-nav { display: none; width: 100%; }
+      #main-nav.active {
+        display: block;
+        margin-top: 1em;
+      }
+      .product-row {
+        flex-direction: column;
+        align-items: center;
+      }
+      .container h1 { font-size: 2em; }
+      .container h2 { font-size: 1.3em; }
+      .footer-full {
+        flex-direction: column;
+        gap: 0.6em;
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo-section">
-                <img src="logo.jpg" alt="Tuffpower Logo" class="logo" onclick="window.location.href='index.html';">
 
-                <span class="tagline">Power for Future</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="industries.html">Industries We Serve</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="Privacy_Policy.html">Privacy Policy</a></li>
-                <li><a href="contact.html">Become a Dealer</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+  <!-- ✅ Navbar -->
+  <header>
+    <div class="navbar">
+      <span class="company-name">Tuffpower Energy</span>
+      <div class="hamburger" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="product.html">Products</a></li>
+          <li><a href="industry.html">Industries We Serve</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- 🔋 Product Section -->
+  <main class="container">
+    <h1>Our Battery Solutions</h1>
+    <h2>Explore our range of high-performance batteries designed for diverse applications.</h2>
+
+    <section>
+      <div class="product-row">
+        <div class="product-card">
+          <div class="emoji">🔋</div>
+          <h3>Lithium-Ion Batteries</h3>
+          <p>High energy density for modern applications.</p>
+          <a href="contact.html" class="btn">Get a Quote</a>
         </div>
-    </nav>
-
-    <main class="full-page">
-        <div class="content-container">
-            <h1 class="fade-in">Our Battery Solutions</h1>
-            <p class="fade-in" align="center">Explore our range of high-performance batteries designed for diverse applications.</p>
-
-            <div class="product-grid">
-                <div class="product-item fade-in">
-                    <span class="icon">🔋</span>
-                    <h3>Lithium-Ion Batteries</h3>
-                    <p>High energy density for modern applications.</p>
-                    <a href="contact.html" class="cta-button">Get a Quote</a>
-                </div>
-                <div class="product-item fade-in">
-                    <span class="icon">🔋</span>
-                    <h3>Lead-Acid Batteries</h3>
-                    <p>Reliable power for automotive and backup.</p>
-                    <a href="contact.html" class="cta-button">Get a Quote</a>
-                </div>
-                <div class="product-item fade-in">
-                    <span class="icon">🔋</span>
-                    <h3>Nickel-Cadmium Batteries</h3>
-                    <p>Durable for high-discharge power tools.</p>
-                    <a href="contact.html" class="cta-button">Get a Quote</a>
-                </div>
-                <div class="product-item fade-in">
-                    <span class="icon">🔋</span>
-                    <h3>Tubular Lead-Acid Batteries</h3>
-                    <p>Long-lasting for deep discharge use.</p>
-                    <a href="contact.html" class="cta-button">Get a Quote</a>
-                </div>
-                <div class="product-item fade-in">
-                    <span class="icon">🔋</span>
-                    <h3>Nickel-Metal Hydride Batteries</h3>
-                    <p>Eco-friendly with high energy density.</p>
-                    <a href="contact.html" class="cta-button">Get a Quote</a>
-                </div>
-                <div class="product-item fade-in">
-                    <span class="icon">🔋</span>
-                    <h3>Silver-Zinc Batteries</h3>
-                    <p>High-performance for aerospace and military.</p>
-                    <a href="contact.html" class="cta-button">Get a Quote</a>
-                </div>
-            </div>
+        <div class="product-card">
+          <div class="emoji">🔌</div>
+          <h3>Lead-Acid Batteries</h3>
+          <p>Reliable performance for backup and automotive use.</p>
+          <a href="contact.html" class="btn">Get a Quote</a>
         </div>
-    </main>
+        <div class="product-card">
+          <div class="emoji">⚙️</div>
+          <h3>Nickel-Cadmium Batteries</h3>
+          <p>Durable under harsh conditions, ideal for industry.</p>
+          <a href="contact.html" class="btn">Get a Quote</a>
+        </div>
+      </div>
 
-   <footer style="background-color: #222; color: #fff; padding: 15px; text-align: center; font-size: 14px;">
-    <a href="about.html" style="color: #fff; text-decoration: none; margin: 0 10px;">About</a> |
-    <a href="contact.html" style="color: #fff; text-decoration: none; margin: 0 10px;">Contact</a> |
-    <a href="Privacy_Policy.html" style="color: #fff; text-decoration: none; margin: 0 10px;">Privacy Policy</a> 
-   
-    <a href="https://www.instagram.com/tuffpowerenergy?igsh=MWZhNW54MHYwem84bA==" target="_blank" style="color: #fff; margin: 0 10px;"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/profile.php?id=61573538819310" target="_blank" style="color: #fff; margin: 0 10px;"><i class="fab fa-facebook"></i></a> |
-    © 2025 Tuffpower Energy Pvt. Ltd. All rights reserved.
-</footer>
+      <div class="product-row">
+        <div class="product-card">
+          <div class="emoji">🏗️</div>
+          <h3>Tubular Lead-Acid Batteries</h3>
+          <p>Long cycle life for demanding UPS applications.</p>
+          <a href="contact.html" class="btn">Get a Quote</a>
+        </div>
+        <div class="product-card">
+          <div class="emoji">🌱</div>
+          <h3>Nickel-Metal Hydride Batteries</h3>
+          <p>Eco-friendly power with stable output.</p>
+          <a href="contact.html" class="btn">Get a Quote</a>
+        </div>
+        <div class="product-card">
+          <div class="emoji">💡</div>
+          <h3>Silver-Zinc Batteries</h3>
+          <p>High reliability in compact form factors.</p>
+          <a href="contact.html" class="btn">Get a Quote</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
-    <div class="scroll-to-top">↑</div>
+  <!-- ✅ Footer -->
+  <footer class="footer">
+    <div class="footer-full">
+      <span class="footer-links">
+        <a href="index.html">Home</a> |
+        <a href="aboutus.html">About Us</a> |
+        <a href="product.html">Products</a> |
+        <a href="industry.html">Industries We Serve</a> |
+        <a href="contact.html">Contact</a> |
+        <a href="privacy.html">Privacy Policy</a>
+      </span>
+      <span class="social-icons">
+        Follow Us:
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+      </span>
+      <span class="footer-right">
+        &copy; 2025 Tuffpower Energy Pvt. Ltd.
+      </span>
+    </div>
+  </footer>
 
-    <script src="script.js"></script>
+  <!-- ✅ Hamburger Script -->
+  <script>
+    function toggleMenu() {
+      document.getElementById('main-nav').classList.toggle('active');
+    }
+  </script>
+
 </body>
 </html>
