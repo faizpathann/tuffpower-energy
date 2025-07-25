@@ -1,105 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tuffpower Energy Pvt. Ltd.</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="script.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Tuffpower Energy Pvt. Ltd.</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo-section">
-                <img src="logo.jpg" alt="Tuffpower Logo" class="logo" onclick="window.location.href='index.html';">
-                <span class="tagline">Power for Future</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="industries.html">Industries We Serve</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="Privacy_Policy.html">Privacy Policy</a></li>
-                <li><a href="contact.html">Become a Dealer</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
+  <style>
+    /* Base Reset & Font Setup */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Container Layout */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+}
+
+/* Navbar */
+    header {
+      background: #ffffff;
+      padding: 1.2em 2em;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .company-name {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #0077b6;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.2em;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #0077b6;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    /* Hamburger Icon */
+    .hamburger {
+      display: none;
+      font-size: 1.5em;
+      color: #0077b6;
+      cursor: pointer;
+    }
+
+    .footer {
+  background: #f3f6fa;
+  padding: 1em 2em;
+  font-size: 0.95em;
+  color: #333;
+  text-align: center;
+}
+
+.footer-full {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2em;
+}
+
+.footer-links a {
+  color: #005f73;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 6px;
+}
+
+.footer-links a:hover {
+  color: #0077b6;
+}
+
+.social-icons {
+  font-weight: 500;
+  color: #555;
+}
+
+.social-icons a {
+  color: #0077b6;
+  font-size: 1.2em;
+  margin-left: 8px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.social-icons a:hover {
+  color: #005f73;
+}
+
+.footer-right {
+  font-weight: 500;
+  color: #555;
+}
+
+/* ✅ Mobile Friendly */
+@media (max-width: 768px) {
+  .footer-full {
+    flex-direction: column;
+    gap: 0.6em;
+  }
+}
+
+/* Section Headings */
+main h1, main h2 {
+  margin: 1.5rem 0 0.5rem;
+  color: #10375c;
+}
+
+main p {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  text-align: justify;
+}
+
+/* Lists */
+.features, .product-list, .mission-list {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.features li,
+.product-list li,
+.mission-list li {
+  background-color: #e0ecf5;
+  padding: 0.6rem 1rem;
+  margin-bottom: 0.5rem;
+  border-left: 4px solid #10375c;
+  border-radius: 4px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  main p {
+    font-size: 0.95rem;
+  }
+}
+
+</style>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Tuffpower Energy Pvt. Ltd.</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ✅ Navbar - Synced with Home Page -->
+<!-- ✅ Navbar -->
+<header>
+  <div class="navbar">
+    <span class="company-name">Tuffpower Energy</span>
+    <div class="hamburger" onclick="toggleMenu()">
+      <i class="fas fa-bars"></i>
+    </div>
+    <nav id="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="industry.html">Industries We Serve</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+      </ul>
     </nav>
+  </div>
+</header>
 
-    <main class="full-page">
-        <div class="content-container">
-            <h1 class="fade-in">About Tuffpower Energy Pvt. Ltd.</h1>
-            <p class="fade-in">
-                A trusted name in battery manufacturing, committed to powering progress with innovation, quality, and reliability.
-                Welcome to Tuffpower Energy Private Limited, a leading manufacturer of lead-acid batteries since 2015. We specialize in reliable and high-performance batteries for automotive, energy backup, and telecom applications. With a focus on quality, innovation, and customer satisfaction, our products are designed to meet diverse energy needs while delivering consistent, long-lasting power. At Tuffpower Energy, we’re committed to powering progress and building a sustainable energy future.
-            </p>
 
-            <h2 class="slide-up">Our Journey</h2>
-            <p class="fade-in">
-                From a vision to provide durable, eco-friendly power solutions, we’ve grown into a thriving business known for cutting-edge technology and customer-centricity. Our advanced facilities and rigorous quality control ensure excellence in every product.
-            </p>
+  <!-- 🔍 Main Content -->
+  <main class="container">
 
-            <h2 class="slide-up">Our Facility</h2>
-            <p class="fade-in">
-                Located in Pithampur, our state-of-the-art manufacturing unit features modern machinery and quality testing equipment, ensuring superior build quality and safety.
-            </p>
-            <ul class="specialty-list fade-in">
-                <li>Advanced production infrastructure</li>
-                <li>Certified technical staff</li>
-                <li>Multi-level quality assurance</li>
-                <li>Sustainable practices</li>
-            </ul>
+    <section class="intro">
+      <h1>About Tuffpower Energy Pvt. Ltd.</h1>
+      <p>A trusted name in battery manufacturing, committed to powering progress with innovation, quality, and reliability. Welcome to Tuffpower Energy Private Limited, a leading manufacturer of lead-acid batteries since 2015. We specialize in reliable and high-performance batteries for automotive, energy backup, and telecom applications. With a focus on quality, innovation, and customer satisfaction, our products are designed to meet diverse energy needs while delivering consistent, long-lasting power. At Tuffpower Energy, we’re committed to powering progress and building a sustainable energy future.</p>
+    </section>
 
-            <h2 class="slide-up">Our Products</h2>
-            <ul class="specialty-list fade-in">
-                <li>Automotive Batteries</li>
-                <li>Inverter & UPS Batteries</li>
-                <li>Solar Batteries</li>
-                <li>E-rickshaw Batteries</li>
-                <li>Custom Solutions</li>
-            </ul>
+    <section class="journey">
+      <h2>Our Journey</h2>
+      <p>From a vision to provide durable, eco-friendly power solutions, we’ve grown into a thriving business known for cutting-edge technology and customer-centricity. Our advanced facilities and rigorous quality control ensure excellence in every product.</p>
+    </section>
 
-            <div class="vision-mission-grid">
-                <div class="vision-mission-item fade-in">
-                    <h3>🌍 Our Vision</h3>
-                    <p>
-                        "Our vision is to be at the forefront of innovation, continuously developing sustainable solutions that bring meaningful and lasting positive change to society. We strive to set new benchmarks of excellence, pushing boundaries and redefining industry standards through our commitment to creativity, integrity, and progressive thinking. By fostering a culture of collaboration and curiosity, we empower individuals and communities to thrive, ensuring that every step we take contributes to a brighter, more sustainable future for all."
-                    </p>
-                </div>
-                <div class="vision-mission-item fade-in">
-                    <h3>🚀 Our Mission</h3>
-                    <p>We strive to deliver exceptional value through innovative & high-quality solutions. Integrity, collaboration, and continuous improvement define our success.</p>
-                    <ul class="mission-list">
-                        <li>High-quality, sustainable batteries</li>
-                        <li>Continuous innovation</li>
-                        <li>Trusted partnerships</li>
-                        <li>Clean energy advocacy</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </main>
+    <section class="facility">
+      <h2>Our Facility</h2>
+      <p>Located in Pithampur, our state-of-the-art manufacturing unit features modern machinery and quality testing equipment, ensuring superior build quality and safety.</p>
+      <ul class="features">
+        <li>✅ Advanced production infrastructure</li>
+        <li>✅ Certified technical staff</li>
+        <li>✅ Multi-level quality assurance</li>
+        <li>✅ Sustainable practices</li>
+      </ul>
+    </section>
 
-    <footer>
-        <div class="footer-links">
-            <a href="about.html">About</a> |
-            <a href="contact.html">Contact</a> |
-            <a href="Privacy_Policy.html">Privacy Policy</a>
-        </div>
-        <p>© 2025 Tuffpower Energy Pvt. Ltd. All rights reserved.</p>
-    </footer>
+    <section class="products">
+      <h2>Our Products</h2>
+      <ul class="product-list">
+        <li>🔋 Automotive Batteries</li>
+        <li>🔋 Inverter & UPS Batteries</li>
+        <li>🔋 Solar Batteries</li>
+        <li>🔋 E-rickshaw Batteries</li>
+      </ul>
+    </section>
 
-    <div class="scroll-to-top">↑</div>
+    <section class="mission">
+      <h2>Our Mission</h2>
+      <p>We strive to deliver exceptional value through innovative & high-quality solutions. Integrity, collaboration, and continuous improvement define our success.</p>
+      <ul class="mission-list">
+        <li>🚀 High-quality, sustainable batteries</li>
+        <li>🚀 Continuous innovation</li>
+        <li>🚀 Trusted partnerships</li>
+        <li>🚀 Clean energy advocacy</li>
+      </ul>
+    </section>
 
-    <script src="script.js"></script>
+    <section class="vision">
+      <h2>Our Vision</h2>
+      <p>Our vision is to be at the forefront of innovation, continuously developing sustainable solutions that bring meaningful and lasting positive change to society. We strive to set new benchmarks of excellence, pushing boundaries and redefining industry standards through our commitment to creativity, integrity, and progressive thinking. By fostering a culture of collaboration and curiosity, we empower individuals and communities to thrive, ensuring that every step we take contributes to a brighter, more sustainable future for all.</p>
+    </section>
+
+  </main>
+
+<footer class="footer">
+  <div class="footer-full">
+    <span class="footer-links">
+      <a href="index.html">Home</a> |
+      <a href="aboutus.html">About Us</a> |
+      <a href="product.html">Products</a> |
+      <a href="industry">Industries We Serve</a> |
+      <a href="contact.html">Contact</a> |
+      <a href="privacy.html">Privacy Policy</a>
+    </span>
+    <span class="social-icons">
+      Follow Us:
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+    </span>
+    <span class="footer-right">
+      &copy; 2025 Tuffpower Energy Pvt. Ltd.
+    </span>
+  </div>
+</footer>
+
 </body>
 </html>
+
