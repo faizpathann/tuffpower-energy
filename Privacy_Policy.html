@@ -1,100 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tuffpower Energy Pvt. Ltd.</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="script.js" defer></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy | Tuffpower Energy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f9fc;
+      color: #333;
+      line-height: 1.6;
+    }
 
+    /* ✅ Navbar */
+    header {
+      background: #ffffff;
+      padding: 1.2em 2em;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .company-name {
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #0077b6;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.2em;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #0077b6;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.5em;
+      color: #0077b6;
+      cursor: pointer;
+    }
+
+    /* ✅ Page Content */
+  .container {
+  padding: 60px 30px;
+  background-color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.7;
+  color: #495057;
+  width: 100%;
+  max-width: 100%;
+}
+
+
+    .container h1 {
+      font-size: 2.4em;
+      text-align: center;
+      color: #023e8a;
+      margin-bottom: 10px;
+    }
+
+    .container h2 {
+      font-size: 1.5em;
+      color: #0096c7;
+      margin-top: 40px;
+      margin-bottom: 10px;
+    }
+
+    .container p {
+      margin-bottom: 20px;
+    }
+
+    /* ✅ Footer */
+    .footer {
+      background: #f3f6fa;
+      padding: 1em 2em;
+      font-size: 0.95em;
+      color: #333;
+      text-align: center;
+    }
+
+    .footer-full {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2em;
+    }
+
+    .footer-links a {
+      color: #005f73;
+      text-decoration: none;
+      font-weight: 500;
+      margin: 0 6px;
+    }
+
+    .footer-links a:hover {
+      color: #0077b6;
+    }
+
+    .social-icons {
+      font-weight: 500;
+      color: #555;
+    }
+
+    .social-icons a {
+      color: #0077b6;
+      font-size: 1.2em;
+      margin-left: 8px;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .social-icons a:hover {
+      color: #005f73;
+    }
+
+    .footer-right {
+      font-weight: 500;
+      color: #555;
+    }
+
+    /* ✅ Responsive */
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 0.8em;
+        background: #ffffff;
+        padding: 1em;
+        border-radius: 6px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      }
+
+      #main-nav {
+        display: none;
+        width: 100%;
+      }
+
+      #main-nav.active {
+        display: block;
+        margin-top: 1em;
+      }
+
+      .container h1 { font-size: 2em; }
+      .container h2 { font-size: 1.3em; }
+
+      .footer-full {
+        flex-direction: column;
+        gap: 0.6em;
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="logo-section">
-                <img src="logo.jpg" alt="Tuffpower Logo" class="logo" onclick="window.location.href='index.html';">
-                <span class="tagline">Power for Future</span>
-            </div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="industries.html">Industries We Serve</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="Privacy_Policy.html">Privacy Policy</a></li>
-                <li><a href="contact.html">Become a Dealer</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
 
-    <main class="full-page">
-        <div class="content-container">
-            <h1 class="fade-in">🔒 Your Privacy Matters</h1>
-            <p class="fade-in">
-                At Tuffpower Energy Pvt. Ltd., we are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your data with transparency and care.
-            </p>
+  <!-- ✅ Navbar -->
+  <header>
+    <div class="navbar">
+      <span class="company-name">Tuffpower Energy</span>
+      <div class="hamburger" onclick="toggleMenu()">
+        <i class="fas fa-bars"></i>
+      </div>
+      <nav id="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="product.html">Products</a></li>
+          <li><a href="industry.html">Industries We Serve</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-            <div class="privacy-grid">
-                <div class="privacy-item fade-in">
-                    <span class="icon">📄</span>
-                    <h3>Information We Collect</h3>
-                    <p>We gather essential details like your name, email, and phone number to enhance our services and provide personalized experiences.</p>
-                </div>
-                <div class="privacy-item fade-in">
-                    <span class="icon">📊</span>
-                    <h3>How We Use Your Data</h3>
-                    <p>Your information helps us improve customer experiences, send relevant updates, and deliver tailored services.</p>
-                </div>
-                <div class="privacy-item fade-in">
-                    <span class="icon">🔐</span>
-                    <h3>Data Security</h3>
-                    <p>We employ robust security measures to protect your data from unauthorized access, ensuring your peace of mind.</p>
-                </div>
-                <div class="privacy-item fade-in">
-                    <span class="icon">🌐</span>
-                    <h3>Third-Party Services</h3>
-                    <p>We may use trusted third-party services, ensuring your data remains protected through strict compliance.</p>
-                </div>
-                <div class="privacy-item fade-in">
-                    <span class="icon">⚖️</span>
-                    <h3>Your Rights</h3>
-                    <p>You can access, update, or delete your personal data. Contact us to exercise your rights or opt out.</p>
-                </div>
-                <div class="privacy-item fade-in">
-                    <span class="icon">🍪</span>
-                    <h3>Cookies & Tracking</h3>
-                    <p>We use cookies to enhance site performance and personalize experiences. Manage preferences in your browser settings.</p>
-                </div>
-            </div>
+  <!-- 🔒 Privacy Content -->
+  <main class="container">
+    <h1>Privacy Policy</h1>
+    <p>At Tuffpower Energy, your privacy is our priority. This policy outlines how we collect, use, and safeguard your information.</p>
 
-            <div class="contact-section slide-up">
-                <h2>📩 Questions About Your Privacy?</h2>
-                <p>We're here to help! Reach out with any concerns or inquiries.</p>
-                <a href="contact.html" class="contact-button">Get in Touch</a>
-            </div>
-        </div>
-    </main>
+    <h2>1. Information We Collect</h2>
+    <p>We collect information you voluntarily provide, such as your name, email, phone number, and business details during inquiry or order forms.</p>
 
-  <footer style="background-color: #222; color: #fff; padding: 15px; text-align: center; font-size: 14px;">
-    <a href="about.html" style="color: #fff; text-decoration: none; margin: 0 10px;">About</a> |
-    <a href="contact.html" style="color: #fff; text-decoration: none; margin: 0 10px;">Contact</a> |
-    <a href="Privacy_Policy.html" style="color: #fff; text-decoration: none; margin: 0 10px;">Privacy Policy</a> 
-   
-    <a href="https://www.instagram.com/tuffpowerenergy?igsh=MWZhNW54MHYwem84bA==" target="_blank" style="color: #fff; margin: 0 10px;"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.facebook.com/profile.php?id=61573538819310" target="_blank" style="color: #fff; margin: 0 10px;"><i class="fab fa-facebook"></i></a> |
-    © 2025 Tuffpower Energy Pvt. Ltd. All rights reserved.
-</footer>
-    <div class="scroll-to-top">↑</div>
+    <h2>2. How We Use Your Information</h2>
+    <p>Your data helps us process requests, respond to inquiries, and improve our products and services. We may use it for direct communication and updates.</p>
 
-    <script src="script.js"></script>
+    <h2>3. Sharing of Information</h2>
+    <p>We do not sell or rent your personal data. Information may be shared with service partners only for business-related purposes (e.g., logistics, technical support).</p>
+
+    <h2>4. Data Security</h2>
+    <p>We implement standard security practices to protect against unauthorized access, alteration, or disclosure of your data.</p>
+
+    <h2>5. Cookies & Tracking</h2>
+    <p>Our website may use cookies to enhance user experience and analyze site traffic. You can modify cookie settings via your browser.</p>
+
+    <h2>6. Third-Party Links</h2>
+    <p>Our site may contain links to other websites. We are not responsible for their privacy practices or content.</p>
+
+    <h2>7. Your Rights</h2>
+    <p>You may request access, correction, or deletion of your personal information by contacting us directly.</p>
+
+    <h2>8. Updates to Policy</h2>
+    <p>This policy may be updated occasionally. All revisions will be posted here with a revised date.</p>
+
+    <h2>9. Contact Us</h2>
+    <p>If you have any questions about our privacy practices, reach out at:</p>
+    <p><strong>📞</strong> +91 9926079786</p>
+    <p><strong>📧</strong> tuffpowerenergy@gmail.com</p>
+    <p><strong>📍</strong> Plot Number -240 B, Pithampur Industrial Area, Sector 3, Pithampur, Indore, Madhya Pradesh 454001</p>
+  </main>
+
+  <!-- ✅ Footer -->
+  <footer class="footer">
+    <div class="footer-full">
+      <span class="footer-links">
+        <a href="index.html">Home</a> |
+        <a href="aboutus.html">About Us</a> |
+        <a href="product.html">Products</a> |
+        <a href="industry.html">Industries We Serve</a> |
+        <a href="contact.html">Contact</a> |
+        <a href="privacy.html">Privacy Policy</a>
+      </span>
+      <span class="social-icons">
+        Follow Us:
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook"></i></a>
+      </span>
+      <span class="footer-right">
+        &copy; 2025 Tuffpower Energy Pvt. Ltd.
+      </span>
+    </div>
+  </footer>
+
+  <!-- ✅ Hamburger Script -->
+  <script>
+    function toggleMenu() {
+      document.getElementById('main-nav').classList.toggle('active');
+    }
+  </script>
+
 </body>
 </html>
