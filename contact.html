@@ -14,7 +14,6 @@
       line-height: 1.6;
     }
 
-    /* ✅ Navbar */
     header {
       background: #ffffff;
       padding: 1.2em 2em;
@@ -54,7 +53,6 @@
       cursor: pointer;
     }
 
-    /* ✅ Contact Section */
     .container {
       padding: 60px 20px;
       background-color: #ffffff;
@@ -147,7 +145,6 @@
       margin: 15px 0;
     }
 
-    /* ✅ Footer */
     .footer {
       background: #f3f6fa;
       padding: 1em 2em;
@@ -197,7 +194,6 @@
       color: #555;
     }
 
-    /* ✅ Responsive */
     @media (max-width: 768px) {
       .hamburger {
         display: block;
@@ -228,10 +224,12 @@
         grid-template-columns: 1fr;
         padding: 0;
       }
+
       .faq-list {
         border-right: none;
         padding-right: 0;
       }
+
       .footer-full {
         flex-direction: column;
         gap: 0.6em;
@@ -282,8 +280,7 @@
       </div>
 
       <!-- 📝 Form Block -->
-      <form class="contact-form">
-        <form action="https://formspree.io/f/meoggodw" method="POST" id="contactForm" class="contact-form">
+      <form action="https://formspree.io/f/meoggodw" method="POST" id="contactForm" class="contact-form">
         <label for="name">Your Name *</label>
         <input type="text" id="name" name="name" required />
 
@@ -330,12 +327,10 @@
     </div>
   </footer>
 
-  <!-- ✅ Hamburger Script -->
   <script>
     function toggleMenu() {
       document.getElementById('main-nav').classList.toggle('active');
     }
   </script>
-
 </body>
 </html>
